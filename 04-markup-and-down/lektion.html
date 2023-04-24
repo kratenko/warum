@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="kratenko" />
+  <meta name="dcterms.date" content="2023-04-27" />
+  <title>Ups and Downs of Markup</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Ups and Downs of Markup</h1>
+<p class="author">kratenko</p>
+<p class="date">2023-04-27</p>
+</header>
+<h1 id="ups-and-downs-of-markup">Ups and Downs of Markup</h1>
+<p>Wir wissen jetzt, was eine Textdatei ausmacht, und ahnen, wieso sie besonders und mächtig ist. Wir haben <a href="https://de.wikipedia.org/wiki/Hypertext_Markup_Language">HTML</a> und <a href="https://de.wikipedia.org/wiki/Wikitext">MediaWiki</a> als Sprachen zum Beschreiben von Dokumenten kennengelernt. Es handelt sich dabei um Markup-Sprachen oder Auszeichnungssprachen. In dieser Lektion vertiefen wir, was das bedeutet, und wir lernen eine weitere Markup-Sprache kennen.</p>
+<h1 id="markup-auszeichnungssprachen">Markup: Auszeichnungssprachen</h1>
+<p>Diese Sprachen beschreiben die Struktur bzw. den Aufbau und die Gliederung eines Dokumentes. Eine Datei enthält Quellcode, bestehend aus dieser Gliederung und dem Inhalt als reinem Text. Ein Programm erzeugt aus dieser Quelldatei das eigentliche Dokument, das dann von einem Menschen betrachtet wird. Für HTML-Dateien ist dies ein Browser. Für MediaWiki-Wikitext ist dies die MediaWiki-Software und ein Browser (aka: <a href="https://de.wikipedia.org/">Die Wikipedia</a>).</p>
+<h2 id="html">HTML</h2>
+<p><a href="https://de.wikipedia.org/wiki/Hypertext_Markup_Language">HTML</a> - <em>Hypertext Markup Language</em> ist, was das <a href="https://de.wikipedia.org/wiki/World_Wide_Web">WWW</a> ausmacht. Anweisungen werden in Tags geschrieben, die in spitzen Klammern geschrieben sind und einen englischen Namen haben, z.B.: <code>&lt;body&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;title&gt;</code>, <code>&lt;b&gt;</code>.</p>
+<p>Manche Tags haben Attribute: <code>&lt;img src="bild.jpeg"&gt;</code>.</p>
+<p>Tags wie für Bilder <code>&lt;img src="..."&gt;</code> oder Zeilenumbruch <code>&lt;br&gt;</code> stehen alleine. Andere haben ein zugehöriges, schließendes Tag, mit dem gleichen Namen, aber mit einem Slash <code>/</code> vorgestellt. Sie beeinflussen alles, was zwischen öffnendem und schließendem Tag steht: <code>&lt;h1&gt;Überschrift&lt;h1&gt;</code>.</p>
+<p>Ein simples HTML-Dokument, das ein Bild anzeigt (das Bild muss als separate Datei vorliegen):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;de&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>        <span class="kw">&lt;title&gt;</span>Eine Rakete<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>        <span class="kw">&lt;h1&gt;</span>Eine krasse Rakete<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        <span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;rakete.jpg&quot;</span><span class="ot"> width=</span><span class="st">&quot;100&quot;</span><span class="ot"> height=</span><span class="st">&quot;100&quot;</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="ot">             alt=</span><span class="st">&quot;Eine Rakete, kurz vor dem Start.&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>        Gleich hebt sie ab, die <span class="kw">&lt;b&gt;</span>Rakete<span class="kw">&lt;/b&gt;</span>!</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<p>HTML gibt eine Gliederung eines Dokumentes an, mit Überschriften, absetzen, etc. Mit grundlegenden Englischkenntnissen und ein wenig Übung ist es möglich ein HTML-Dokument im Quellcode nachzuvollziehen. Es ist jedoch oft nicht einfach, einen Text im HTML-Quellcode zu lesen, da die Tags recht stark vom Inhalt ablenken. Die Syntax und übliche Formatierung/Einrückung legen den Schwerpunkt auf die Struktur und lassen den Text oft untergehen. Gerade komplexere Seiten (was heutzutage auf fast alle Seiten im WWW zutrifft), sind oft mit HTML überladen, sodass ein Lesen unzumutbar wird. Als Beispiel kann man sich mal den Wikipediaartikel zu HTML im Browser anschauen, und dann mal den Quellcode dazu lesen (dies erreicht man in einigen Browsern über <code>Strg-U</code>, bzw. Rechtsclick, “Seitenquelltext anzeigen”):</p>
+<p><a href="https://de.wikipedia.org/wiki/Hypertext_Markup_Language">https://de.wikipedia.org/wiki/Hypertext_Markup_Language</a></p>
+<p>Ein Beispiel für eine minimalistische HTML-Seite ist das Blog von Fefe. Dort kann den Quelltext noch besser lesen, angenehm ist es aber auch dort nicht:</p>
+<p><a href="https://blog.fefe.de/">https://blog.fefe.de/</a></p>
+<p>HTML ist nicht nur nervig zu lesen, es ist auch nervig zu schreiben. Außerdem ist es fehleranfällig; wenn geöffnete Tags nicht in der richtigen Reihenfolge wieder geschlossen werden, ist das Dokument fehlerhaft. Dies liegt auch daran, dass HTML nicht mehr ganz neu ist; es ist von 1992. Damals sind nur wenige Leute in die Verlegenheit gekommen, Internetseiten zu gestalten, und diese Leute waren hauptsächlich an Universitäten unterwegs. Es hat viel ermöglicht, aber es hat sich als ungeeignet gezeigt, das Erzeugen von Webinhalten der breiten Masse zu ermöglichen.</p>
+<h2 id="wikitext">Wikitext</h2>
+<p>Einen wichtigen Durchbruch in der Nutzung und Verbreitung des Netzes haben <a href="https://de.wikipedia.org/wiki/Wiki">Wikis</a> gebracht. Das bekannteste Wiki ist die Wikipedia. Sie war jedoch weder das erste Wiki, noch ist sie der Namensgeber.</p>
+<p><em>Wiki</em> bedeutet <em>schnell</em>. Der beschreibt die Grundidee, die hinter dem Konzept des Wikis steht, und die der Grund für deren Erfolg ist. Ein Wiki präsentiert ein Dokument in für den Menschen gut lesbarer Form. Dazu bietet es direkt eine einfache Funktion, mit der dieser Inhalt einfach und unproblematisch bearbeitet werden kann.</p>
+<p>Wikis senken die Hürde, einen Text zu bearbeiten (also ihn zu erweitern oder kurz zu berichtigen) enorm. Zusätzlich werden dort Sprachen benutzt, die zugänglicher und besser lesbar sind, als HTML. Hierdurch wird es sehr viel mehr Menschen möglich, Inhalte im Web zu erzeugen.</p>
+<p>Die Syntax für Wikitext ist nicht wirklich einheitlich über die verschiedenen Wikis, die es gibt. Als Beispiel sei hier der Wikitext der Wikipedia herangezogen. Hier ist ein Auszug aus dem <a href="https://de.wikipedia.org/w/index.php?title=Wiki&amp;oldid=232341248">Wikipediaartikel über Wikis</a>:</p>
+<pre class="wikitext"><code>=== Vorläufer ===
+Einer der ersten Vorläufer des Wikis war das in der 
+[[Carnegie-Mellon University]] 1972 entwickelte 
+[[ZOG (Hypertext)|ZOG]]-Datenbanksystem, das für mehrere 
+Nutzer ausgelegt war und die Daten in 
+strukturierten Textrahmen darstellte; 
+verbunden waren sie durch [[Hyperlink]]s.
+
+Dieses System wurde 1981 von [[Donald McCracken]] und 
+[[Robert Akscyn]] zum  [[Knowledge Management System]] 
+(KMS) erweitert, bei dem Änderungen an den Datenblättern 
+im gesamten Netzwerk sofort sichtbar wurden. 
+In diesem System waren bereits Grafiken und Bilder 
+integrierbar, auch sie konnten mit Hyperlinks 
+versehen werden.</code></pre>
+<p>Diese Markupsprache legt den Fokus auf einen lesbaren Text. Insbesondere sind Links dezenter umgesetzt, mit eckigen Klammern: <code>[[Robert Akscyn]]</code>. Dies stört den Textfluss deutlich weniger als die ungefähre HTML-Entsprechung <code>&lt;a href="Robert_Akscyn"&gt;Robert Akscyn&lt;/a&gt;</code>. Es ist auch weniger anfällig für Fehler; bei HTML kann ein einziges falsches Zeichen<br />
+dazu führen, dass ein komplettes Dokument unlesbar wird.</p>
+<h2 id="web-2.0">Web 2.0</h2>
+<p>Wikis und andere Weiterentwicklungen des WWW werden unter dem Begriff <a href="https://de.wikipedia.org/wiki/Web_2.0">Web 2.0</a> zusammengefasst. Hierzu gehören neben Wikis auch Blogs und Social Media. Die entscheidende Entwicklung ist hier, dass die breite Masse der Internetnutzer vom reinen Konsumenten erhoben wurde zum Inhalte schaffenden. Dies wurde auch dadurch ermöglicht, dass simple Sprachen genutzt werden, um Inhalte zu erzeugen, die dann von Software in HTML umgesetzt werden. Es sind dabei viele oft ähnliche aber doch unterschiedliche Sprachen entstanden.</p>
+<h1 id="markdown">Markdown</h1>
+<p>Eine simple Auszeichnungssprache, die sich besonders in der Entwicklerszene durchgesetzt hat, ist <a href="https://de.wikipedia.org/wiki/Markdown">Markdown</a>. Sie zeichnet sich dadurch aus, dass sie auch im Quelltext gut zu lesen ist. Sie ist ursprünglich dazu gedacht, in HTML übersetzt zu werden.</p>
+<p>Ein kleines Beispieldokument in Markdown:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="fu"># Eine Überschrift erster Ordnung</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>Dieser Text zeigt ein kleines Markdowndokument.</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="fu">## Absätze</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>Ein zusammenhängender Text wird als ein Absatz verstanden. </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>Einzelne Zeilenumbrüche spielen hierbei keine Rolle.</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>Andere     Whitespaces, wie z.B. Leerzeichen werden </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>immer nur als   ein trennendes Zeichen ausgegeben.</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>Nach einer Leerzeile beginnt ein neuer Absatz. Es kann </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a>auch mehr als eine Leerzeile eingefügt werden; trotzdem </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a>entsteht nur ein neuer Absatz.</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a><span class="fu">## Einfache Formatierung</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a>Texte können einfach *kursiv*, **fett** oder auch </span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true"></a>***fett und kursiv*** gestaltet werden. Hierdurch kann </span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true"></a>man Teile betonen oder hervorheben.</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true"></a><span class="fu">## Listen</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true"></a>Listen werden in einer intuitiven Form erzeugt:</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true"></a><span class="ss">1. </span>Der erste Punkt komm hier</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true"></a><span class="ss">2. </span>Ein zweiter Punkt folgt</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true"></a><span class="ss">    1. </span>Dieser Punkt ist ein Unterpunkt von 2.</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true"></a><span class="ss">3. </span>Jetzt reicht es aber auch mal mit der Liste.</span></code></pre></div>
+<p>Es ist noch einiges mehr in Markdown möglich. Dieses gesamte Dokument wurde in Markdown erstellt.</p>
+<p>Auch innerhalb von Markdown gibt es einen Wildwuchs an Erweiterungen und Standardisierungen. Die Grundlagen sind mehr oder weniger gleich. Manche Varianten unterstützen z.B. auch Tabellen.</p>
+<p>Viele Blogs und viel Dokumentation ist in Markdown geschrieben - auch wenn man das häufig nicht sieht, da man nur den erzeugen HTML-Text kennt.</p>
+<p>Markdown ermöglicht ein schnelles, strukturiertes Schreiben von Texten. Man kann darin z.B. auch Notizen zu einem Meeting führen.</p>
+<p>Wenn ein Text einmal in einer strukturierten Form vorliegt, kann man ihn gut mit Computerprogrammen weiterverarbeiten.</p>
+<h1 id="übersetzen">Übersetzen</h1>
+<p>Dieses Markdowndokument beschreibt die Eigenschaften und Vorteile einer Markupsprache. Es sollte alleinstehend als reine Textdatei lesbar und verständlich sein. Der eigentliche Inhalt, der Text, nimmt die Hauptrolle ein. Für Menschen, die es nicht gewohnt sind, Quellcode zu lesen, ist dies sicher irritierend, aber das wichtigste, der Text, sollte auch ihnen zugänglich sein. Die Gliederung erschließt sich dem neugierigen Leser hoffentlich nach dem Lesen einiger Markdowndokumente von selbst zumindest im Groben.</p>
+<p>Wer dieses Dokument in einem modernen Texteditor mit Markdownverständnis öffnet (oder in <a href="https://github.com/">github</a> betrachtet), dürfte sogar schon auf den ersten Blick verstehen, welche Vorzüge sich aus dem Definieren der Gliederung ergeben.</p>
+<p>Um zu zeigen, was möglich ist, wenn der Computer die Gliederung des Textes versteht, sind der Datei noch einige Übersetzungen beigefügt. Diese wurden ohne weiteres eingreifen mit einem Computerprogramm aus diesem Markdowndokument als Quelltext erzeugt.</p>
+<p>Das Programm, das für das Generieren genutzt wurde, heißt <a href="https://pandoc.org/">Pandoc</a>. Es ist ein mächtiges Werkzeug, das strukturierte Dokumente über verschiedenste Formate hin und her konvertieren kann. Im Folgenden werden die Befehle dokumentiert, mit denen verschiedene Formate erzeugt wurden.</p>
+<h2 id="pdf">PDF</h2>
+<p>Das Format, das heute jeder öffnen kann. Wir können unser Markdowndokument ohne weitere Angaben einfach in pandoc reinwerfen. Das Ergebnis ist ein brauchbares PDF-Dokument: <a href="lektion.pdf">lektion.pdf</a></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co"># Erzeugen eines einfachen PDFs:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="ex">pandoc</span> Lektion.md -o lektion.pdf</span></code></pre></div>
+<p>Da das Programm die Gliederung des Textes versteht, ist es möglich, diese zu Nutzen. Wir können sehr einfach ein Inhaltsverzeichnis (Table of Contents, TOC) einfügen: <a href="lektion-toc.pdf">lektion-toc.pdf</a></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co"># Erzeugen eines PDFs mit Inhaltsverzeichnis:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="ex">pandoc</span> Lektion.md -o lektion-toc.pdf --toc</span></code></pre></div>
+<p>Das Standarddesign für PDFs aus pandoc sieht etwas dröge aus; es ist das übliche Design von <a href="https://de.wikipedia.org/wiki/LaTeX">LaTeX</a>, welches im Hintergrund benutzt wird. Das Design ist jedoch gar nicht Teil des Dokuments; wir folgen dem Prinzip der Trennung von Inhalt und Design. Im Markdowndokument ist der (strukturierte) Inhalt definiert worden. Die Darstellung wird an anderer Stelle definiert. Wir können mit ein paar einfachen ein Template für die Darstellung wählen (und an unsere Wünsche leicht anpassen). Das Ergebnis liegt in <a href="lektion-eisvogel.pdf">lektion-eisvogel.pdf</a>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co"># Erzeugen eines PDFs mit Inhaltsverzeichnis und Designvorlage:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="ex">pandoc</span> Lektion.md -o lektion-eisvogel.pdf --toc --template eisvogel -Mtitlepage -Mtoc-own-page</span></code></pre></div>
+<h2 id="html-1">HTML</h2>
+<p>Wir können das Dokument auch als HTML-Seite auf unserem Webserver ausliefern: <a href="lektion.html">lektion.html</a></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co"># Erzeugen einer HTML-Seite:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="ex">pandoc</span> Lektion.md -s -o lektion.html</span></code></pre></div>
+<p>Auch bei HTML können wir wieder Templates nutzen, um das Design zu beeinflussen: <a href="lektion-easy.html">lektion-easy.html</a></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co"># Installieren der genutzten Templates in `~/.pandoc/templates`</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="ex">curl</span> <span class="st">&#39;https://raw.githubusercontent.com/ryangrose/easy-pandoc-templates/master/copy_templates.sh&#39;</span> <span class="kw">|</span> <span class="fu">bash</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="co"># Erzeugen einer HTML-Seite mit Designvorlage:</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a><span class="ex">pandoc</span> Lektion.md -s -o lektion-easy.html --template easy_template --toc</span></code></pre></div>
+<h2 id="weitere-formate">Weitere Formate</h2>
+<p>Pandoc unterstützt noch andere Formate. Hier noch ein paar weitere Beispiele. Dies soll andeuten, welche mächtigen Werkzeuge einem zur Verfügung stehen, wenn ein Dokument so geschrieben ist, dass der Computer die Gliederung versteht.</p>
+<ul>
+<li>Epub E-Reader Buch: <a href="lektion.epub">lektion.epub</a></li>
+<li>Office open document text: <a href="lektion.odt">lektion.odt</a></li>
+<li>MediaWiki Wikitext (Wikipedia): <a href="lektion.wiki">lektion.wiki</a></li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="co"># Als epub E-Book rendern:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a><span class="ex">pandoc</span> Lektion.md -o lektion.epub --toc</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a><span class="co"># Als Open Document Text (Office) rendern:</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a><span class="ex">pandoc</span> Lektion.md -o lektion.odt</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a><span class="co"># Als Mediawiki Wikitext (Wikipedia) rendern:</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a><span class="ex">pandoc</span> Lektion.md -o lektion.wiki -t mediawiki</span></code></pre></div>
+</body>
+</html>
