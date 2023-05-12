@@ -1,0 +1,4 @@
+Dies ist auch wieder nur Text.
+
+Buchstaben (groß und klein), Leerzeichen, Klammern, Punkt und Komma.
+Ach ja, Zeilenumbrüche (New Lines) sind auch dabei (aber keine Carriage Returns).
